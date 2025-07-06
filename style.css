@@ -1,0 +1,91 @@
+:root {
+    --light-blue: #ADD8E6; /* Açık Mavi (%60) */
+    --white: #FFFFFF;     /* Beyaz (%30) */
+    --dark-blue: #00008B;  /* Lacivert (%10 ve Yazı Rengi) */
+    --text-color: var(--dark-blue);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-blue); /* %60 Açık Mavi */
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* Kutucukları ortala */
+}
+
+.word-box {
+    background-color: var(--white); /* Kutucukların içi beyaz */
+    border: 1px solid var(--dark-blue);
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%; /* Yatay olarak geniş kutucuklar */
+    max-width: 800px; /* Maksimum genişlik */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.main-word-container {
+    margin-bottom: 15px;
+}
+
+.main-word {
+    font-size: 1.8em; /* Baştaki kelime büyük */
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.main-word-meaning {
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+.derived-words-list {
+    list-style: none; /* Madde işaretlerini kaldır */
+    padding: 0;
+    margin: 0;
+}
+
+.derived-word-item {
+    margin-bottom: 5px;
+}
+
+.derived-word {
+    font-size: 1.1em; /* Türetilen kelimeler daha küçük */
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.derived-word-meaning {
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+footer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
