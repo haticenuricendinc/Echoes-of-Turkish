@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const contentDiv = document.getElementById('content');
-    const sheetbestApiUrl = 'https://api.sheetbest.com/sheets/64ea120f-9c2e-451b-9d58-bb525e2d9308';
+    // BURAYA SİZİN Sheetbest API URL'nizi yapıştırın
+    // Örnek: const sheetbestApiUrl = 'https://api.sheetbest.com/sheets/64ea120f-9c2e-451b-9d58-bb525e2d9308';
+    const sheetbestApiUrl = 'https://api.sheetbest.com/sheets/64ea120f-9c2e-451b-9d58-bb525e2d9308'; // Sizin API URL'niz
+
     fetch(sheetbestApiUrl)
         .then(response => {
             if (!response.ok) {
@@ -16,48 +19,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 const wordBox = document.createElement('div');
                 wordBox.classList.add('word-box');
 
-                // Ana kelime (ilk sütun)
+                // Ana kelime (KÖK sütunu) ve anlamı (t1 sütunu)
                 const mainWordContainer = document.createElement('div');
                 mainWordContainer.classList.add('main-word-container');
 
                 const mainWordSpan = document.createElement('span');
                 mainWordSpan.classList.add('main-word');
-                mainWordSpan.textContent = row.KÖK; // 'kelime1' yerine ilk sütununuzun başlığını kullanın
+                mainWordSpan.textContent = row.KÖK || ''; // KÖK sütunundaki değer
 
                 const mainWordMeaningSpan = document.createElement('span');
                 mainWordMeaningSpan.classList.add('main-word-meaning');
-                mainWordMeaningSpan.textContent = ` (${row.KÖK})`; // 'anlam1' yerine ilk kelimenin anlamının sütun başlığını kullanın
+                mainWordMeaningSpan.textContent = row.t1 ? ` (${row.t1})` : ''; // t1 sütunundaki değer
 
                 mainWordContainer.appendChild(mainWordSpan);
                 mainWordContainer.appendChild(mainWordMeaningSpan);
                 wordBox.appendChild(mainWordContainer);
 
-                // Türetilen kelimeler (kalan sütunlar)
+                // Türetilen kelimeler ve anlamları (t2'den t15'e kadar çiftler halinde)
                 const derivedWordsList = document.createElement('ul');
                 derivedWordsList.classList.add('derived-words-list');
 
-                // Sütunlarınızı Sheetbest'in API'sinden geldiği şekliyle burada döngüye sokun
-                // Örnek: kelime2, anlam2, kelime3, anlam3...
-                // Google Sheet'inizdeki sütun başlıklarına göre bu kısmı özelleştirmeniz gerekecek.
-                // Örneğin, sheet'inizde "Kelime", "Anlam", "TüretilmişKelime1", "Anlam1"... gibi başlıklar varsa,
-                // bunları 'row.TüretilmişKelime1' gibi kullanmanız gerekecektir.
-                // Burada örnek olarak 2. ve 3. kelimeleri ekliyorum, daha fazlası için döngüyü genişletin.
-                if (row.kelime2 && row.anlam2) {
-                    const derivedWordItem = document.createElement('li');
-                    derivedWordItem.classList.add('derived-word-item');
-                    derivedWordItem.innerHTML = `<span class="derived-word">${row.kelime2}</span> <span class="derived-word-meaning">(${row.anlam2})</span>`;
-                    derivedWordsList.appendChild(derivedWordItem);
-                }
-                if (row.kelime3 && row.anlam3) {
-                    const derivedWordItem = document.createElement('li');
-                    derivedWordItem.classList.add('derived-word-item');
-                    derivedWordItem.innerHTML = `<span class="derived-word">${row.kelime3}</span> <span class="derived-word-meaning">(${row.anlam3})</span>`;
-                    derivedWordsList.appendChild(derivedWordItem);
-                }
-                // Diğer kelimeler için benzer 'if' blokları ekleyin
-                // Örneğin:
-                // if (row.kelime4 && row.anlam4) { ... }
+                // t2'den başlayarak her iki sütunda bir kelime ve anlam alıyoruz
+                // Başlıklarınızdaki 't5' tekrarını dikkate alarak, t2, t3, t4, t5, t6, t7... olarak ilerliyoruz
+                // Eğer Sheetbest 't5_1', 't5_2' gibi farklı isimler döndürürse, bu kısmı ayarlamanız gerekebilir.
+                for (let i = 2; i <= 15; i += 2) {
+                    const wordKey = `t${i}`;
+                    const meaningKey = `t${i + 1}`; // Varsayım: her tX'ten sonra t(X+1) onun anlamıdır
 
+                    const derivedWord = row[wordKey];
+                    const derivedMeaning = row[meaningKey];
+
+                    if (derivedWord) { // Kelime varsa listeye ekle
+                        const derivedWordItem = document.createElement('li');
+                        derivedWordItem.classList.add('derived-word-item');
+                        derivedWordItem.innerHTML = `<span class="derived-word">${derivedWord}</span>` +
+                                                    (derivedMeaning ? ` <span class="derived-word-meaning">(${derivedMeaning})</span>` : '');
+                        derivedWordsList.appendChild(derivedWordItem);
+                    }
+                }
 
                 wordBox.appendChild(derivedWordsList);
                 contentDiv.appendChild(wordBox);
@@ -65,6 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => {
             console.error('Veri çekme hatası:', error);
-            contentDiv.innerHTML = '<p>Veriler yüklenirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.</p>';
+            contentDiv.innerHTML = '<p>Veriler yüklenirken bir hata oluştu. Lütfen daha sonra tekrar deneyin veya tarayıcınızın konsolunu kontrol edin.</p>';
         });
 });
