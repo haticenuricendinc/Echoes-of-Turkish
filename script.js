@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const mainWordSpan = document.createElement('span');
                 mainWordSpan.classList.add('main-word');
-                mainWordSpan.textContent = row.kelime1; // 'kelime1' yerine ilk sütununuzun başlığını kullanın
+                mainWordSpan.textContent = row.KÖK; // 'kelime1' yerine ilk sütununuzun başlığını kullanın
 
                 const mainWordMeaningSpan = document.createElement('span');
                 mainWordMeaningSpan.classList.add('main-word-meaning');
-                mainWordMeaningSpan.textContent = ` (${row.anlam1})`; // 'anlam1' yerine ilk kelimenin anlamının sütun başlığını kullanın
+                mainWordMeaningSpan.textContent = ` (${row.KÖK})`; // 'anlam1' yerine ilk kelimenin anlamının sütun başlığını kullanın
 
                 mainWordContainer.appendChild(mainWordSpan);
                 mainWordContainer.appendChild(mainWordMeaningSpan);
