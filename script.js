@@ -1,37 +1,43 @@
 // Kelime ve anlamı aynı string'den ayıran yardımcı fonksiyon
 function parseWordMeaning(fullString) {
-    if (!fullString) {
+    if (!fullString || typeof fullString !== 'string') {
         return { word: '', meaning: '' };
     }
 
-    let word = fullString.trim();
+    let trimmedString = fullString.trim();
+    let word = trimmedString;
     let meaning = '';
-    let sepChar = '';
-    let sepPos = -1;
 
-    // Ayırıcıları öncelik sırasına göre kontrol et
-    // 1. İki nokta üst üste (:)
-    let possibleSep1 = fullString.indexOf(':');
-    // 2. Boşluk-tire-boşluk (" - ")
-    let possibleSep2 = fullString.indexOf(' - ');
+    // İlk olarak ": " (iki nokta üst üste ve boşluk) ayırıcısını arıyoruz
+    let sepIndex = trimmedString.indexOf(': ');
+    let sepLength = 2; // ": " uzunluğu
 
-    // En erken bulunan ve geçerli olan ayırıcıyı belirle
-    if (possibleSep1 !== -1 && (possibleSep2 === -1 || possible1 < possibleSep2)) {
-        sepPos = possibleSep1;
-        sepChar = ':';
-    } else if (possibleSep2 !== -1) {
-        sepPos = possibleSep2;
-        sepChar = ' - ';
+    // Eğer ": " bulunamazsa, ":", sonra " - " veya "- " gibi ayırıcılara bak
+    if (sepIndex === -1) {
+        sepIndex = trimmedString.indexOf(':'); // Sadece iki nokta üst üste
+        sepLength = 1;
+        if (sepIndex === -1) {
+            sepIndex = trimmedString.indexOf(' - '); // Boşluk-tire-boşluk
+            sepLength = 3;
+            if (sepIndex === -1) {
+                // Son çare olarak, kök kelimelerde sıkça görülen "kelime- anlam" formatı için
+                // ilk tireden sonraki ilk boşluğu arayabiliriz, ancak bu riskli olabilir.
+                // Şimdilik daha belirgin ayırıcılara odaklanalım.
+
+                // Eğer hala bir ayırıcı bulunamadıysa, tüm string'i kelime olarak döndür
+                return { word: trimmedString, meaning: '' };
+            }
+        }
     }
-    // NOT: "aç-: to open" gibi durumlarda, "aç-" kelimenin kendisi olduğu için
-    // tireyi ayırıcı olarak otomatik algılamaması için daha spesifik ayırıcılar kullanıldı.
-    // Bu fonksiyon, ilk bulduğu geçerli ayırıcıya göre bölme yapacaktır.
 
-    if (sepPos !== -1) {
-        word = fullString.substring(0, sepPos).trim();
-        meaning = fullString.substring(sepPos + sepChar.length).trim();
-    } else {
-        word = fullString.trim(); // Eğer belirgin bir ayırıcı yoksa, tüm string'i kelime olarak kabul et
+    if (sepIndex !== -1) {
+        word = trimmedString.substring(0, sepIndex).trim();
+        meaning = trimmedString.substring(sepIndex + sepLength).trim();
+    }
+
+    // Anlam parantez içinde başlıyorsa, parantezleri kaldır
+    if (meaning.startsWith('(') && meaning.endsWith(')')) {
+        meaning = meaning.substring(1, meaning.length - 1).trim();
     }
 
     return { word, meaning: meaning || '' };
