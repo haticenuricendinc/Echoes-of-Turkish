@@ -6,41 +6,32 @@ function parseWordMeaning(fullString) {
 
     let word = fullString.trim();
     let meaning = '';
-    let separatorIndex = -1;
+    let sepChar = '';
+    let sepPos = -1;
 
-    // Önce iki nokta üst üste (:) arıyoruz
-    separatorIndex = word.indexOf(':');
-    if (separatorIndex === -1) {
-        // Eğer iki nokta üst üste yoksa, boşluklu tire (" - ") arıyoruz
-        separatorIndex = word.indexOf(' - ');
-        if (separatorIndex === -1) {
-            // Eğer boşluklu tire de yoksa, tek tire ("-") arıyoruz,
-            // ama bu tire kelimenin sonunda değilse veya bir boşlukla ayrılmıyorsa
-            // "aç-" gibi köklerdeki tireleri kelimenin parçası olarak bırakmak için dikkatli olmalıyız.
-            // Görseldeki 'aç- to buy' gibi örneklerde tireden sonra boşluk var.
-            let firstSpaceIndex = word.indexOf(' ');
-            if (firstSpaceIndex !== -1 && word.substring(0, firstSpaceIndex).endsWith('-')) {
-                separatorIndex = firstSpaceIndex -1; // tirenin konumunu al
-                // Bu durumda separator 'tire + boşluk'tur.
-            } else {
-                // Eğer belirgin bir ayırıcı yoksa, tüm string'i kelime olarak kabul et
-                return { word: fullString.trim(), meaning: '' };
-            }
-        }
+    // Ayırıcıları öncelik sırasına göre kontrol et
+    // 1. İki nokta üst üste (:)
+    let possibleSep1 = fullString.indexOf(':');
+    // 2. Boşluk-tire-boşluk (" - ")
+    let possibleSep2 = fullString.indexOf(' - ');
+
+    // En erken bulunan ve geçerli olan ayırıcıyı belirle
+    if (possibleSep1 !== -1 && (possibleSep2 === -1 || possible1 < possibleSep2)) {
+        sepPos = possibleSep1;
+        sepChar = ':';
+    } else if (possibleSep2 !== -1) {
+        sepPos = possibleSep2;
+        sepChar = ' - ';
     }
+    // NOT: "aç-: to open" gibi durumlarda, "aç-" kelimenin kendisi olduğu için
+    // tireyi ayırıcı olarak otomatik algılamaması için daha spesifik ayırıcılar kullanıldı.
+    // Bu fonksiyon, ilk bulduğu geçerli ayırıcıya göre bölme yapacaktır.
 
-
-    if (separatorIndex !== -1) {
-        word = fullString.substring(0, separatorIndex).trim();
-        // Ayırıcıdan sonraki kısmı anlam olarak al
-        // Ayırıcının uzunluğuna göre substring başlangıcını ayarla (örn: ':' için 1, ' - ' için 3, '- ' için 2)
-        let effectiveSeparatorLength = 1; // Default for ':' or single '-'
-        if (fullString.substring(separatorIndex, separatorIndex + 3) === ' - ') {
-            effectiveSeparatorLength = 3;
-        } else if (fullString.substring(separatorIndex, separatorIndex + 2) === '- ') {
-            effectiveSeparatorLength = 2;
-        }
-        meaning = fullString.substring(separatorIndex + effectiveSeparatorLength).trim();
+    if (sepPos !== -1) {
+        word = fullString.substring(0, sepPos).trim();
+        meaning = fullString.substring(sepPos + sepChar.length).trim();
+    } else {
+        word = fullString.trim(); // Eğer belirgin bir ayırıcı yoksa, tüm string'i kelime olarak kabul et
     }
 
     return { word, meaning: meaning || '' };
@@ -65,9 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Her satırı (veri kaydını) işleyerek bir kelime kutusu oluştur
             data.forEach(row => {
-                // KÖK sütunu boşsa bu satırı atla
-                if (!row.KÖK || typeof row.KÖK !== 'string' || row.KÖK.trim() === '') {
-                    return;
+                // JSON çıktısında "KÖK " anahtarının sonunda bir boşluk olduğuna dikkat!
+                const mainRootKey = "KÖK ";
+                if (!row[mainRootKey] || typeof row[mainRootKey] !== 'string' || row[mainRootKey].trim() === '') {
+                    return; // KÖK sütunu boşsa bu satırı atla
                 }
 
                 const wordBox = document.createElement('div');
@@ -77,7 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const mainWordContainer = document.createElement('div');
                 mainWordContainer.classList.add('main-word-container');
 
-                const mainParsed = parseWordMeaning(row.KÖK); // KÖK sütunundaki değeri ayrıştır
+                // Anahtar olarak "KÖK " kullanın
+                const mainParsed = parseWordMeaning(row[mainRootKey]);
                 const mainWordSpan = document.createElement('span');
                 mainWordSpan.classList.add('main-word');
                 mainWordSpan.textContent = mainParsed.word;
@@ -90,12 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 mainWordContainer.appendChild(mainWordMeaningSpan);
                 wordBox.appendChild(mainWordContainer);
 
-                // --- Türetilen Kelimeler ve Anlamları (t1'den t15'e kadar) ---
+                // --- Türetilen Kelimeler ve Anlamları (t1'den t16'ya kadar) ---
                 const derivedWordsList = document.createElement('ul');
                 derivedWordsList.classList.add('derived-words-list');
 
-                // t1'den başlayarak t15'e kadar her sütunu bir türetilmiş kelime-anlam çifti olarak alıyoruz
-                for (let i = 1; i <= 15; i++) {
+                // Döngüyü t16'ya kadar devam ettirin
+                for (let i = 1; i <= 16; i++) {
                     const columnKey = `t${i}`;
                     const fullText = row[columnKey];
 
