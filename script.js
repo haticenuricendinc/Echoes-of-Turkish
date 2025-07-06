@@ -1,33 +1,43 @@
-const API_URL = "https://api.sheetbest.com/sheets/64ea120f-9c2e-451b-9d58-bb525e2d9308";
+const API_URL = "https://api.sheetbest.com/sheets/1MnYzEVaMEpMqkNQ3Chh0Uwo_F_x01F2M0SLRnfUhnF8";
 const container = document.getElementById("word-container");
 
 fetch(API_URL)
-  .then(response => response.json())
+  .then(res => {
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  })
   .then(data => {
     data.forEach(row => {
       const box = document.createElement("div");
       box.className = "word-box";
 
-      const keys = Object.keys(row).filter(k => row[k]); // boş olmayanlar
+      const main = row['Kelime'] || row['Word'] || Object.values(row)[0];
+      const meaning = row['Anlam'] || row['Meaning'] || "";
 
-      if (keys.length > 0) {
-        const main = document.createElement("div");
-        main.className = "main-word";
-        main.textContent = row[keys[0]];
-        box.appendChild(main);
+      const mainEl = document.createElement("div");
+      mainEl.className = "main-word";
+      mainEl.textContent = main + (meaning ? ` — ${meaning}` : "");
+      box.appendChild(mainEl);
 
-        for (let i = 1; i < keys.length; i++) {
-          const sub = document.createElement("div");
-          sub.className = "sub-word";
-          sub.textContent = row[keys[i]];
-          box.appendChild(sub);
-        }
+      // Türev sütunlarını döngüyle yaz
+      Object.keys(row).forEach(k => {
+        if (k === 'Kelime' || k === 'Word' || k === 'Anlam' || k === 'Meaning') return;
+        const val = row[k];
+        if (!val) return;
+        const subEl = document.createElement("div");
+        subEl.className = "sub-word";
+        subEl.textContent = val;
+        box.appendChild(subEl);
+      });
 
-        container.appendChild(box);
-      }
+      container.appendChild(box);
     });
+
+    if (data.length === 0) {
+      container.innerHTML = "<p>Sheet’te veri bulunamadı.</p>";
+    }
   })
-  .catch(error => {
-    container.innerHTML = "<p>Veriler yüklenirken hata oluştu.</p>";
-    console.error(error);
+  .catch(err => {
+    console.error(err);
+    container.innerHTML = "<p>Veri yüklenirken hata oluştu. Konsolu kontrol et.</p>";
   });
