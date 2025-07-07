@@ -30,8 +30,8 @@ header {
   font-size: 1rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  margin: 10px auto; /* Üstte ve altta 10px boşluk, yatayda ortala */
-  padding: 8px; /* Daha iyi bir görünüm için padding ayarlaması */
+  margin: 100px auto; /* Üstte ve altta 10px boşluk, yatayda ortala */
+  padding: 8px auto; /* Daha iyi bir görünüm için padding ayarlaması */
   width: 250px; /* Genişliği biraz artırın */
 }
 
