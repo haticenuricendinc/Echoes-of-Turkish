@@ -1,0 +1,840 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Echoes of Turkish</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Libre Baskerville', serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #e6f0fa;
+      color: #0a2f5c;
+    }
+    header {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      gap: 30px;
+      justify-content: flex-start;
+    }
+    .flip-card {
+      background-color: transparent;
+      width: 200px;
+      height: 200px;
+      perspective: 1000px;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 10px;
+      background-color: white;
+      overflow-y: auto;
+    }
+    .flip-card-front {
+      font-weight: bold;
+    }
+    .flip-card-back {
+      transform: rotateY(180deg);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <header>Echoes of Turkish</header>
+  <div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">acı- : to pity</div>
+            <div class="flip-card-back">acı: pain, bitter<br>acıt- : to hurt<br>acılı: spicy</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">aç- : to open</div>
+            <div class="flip-card-back">açık: open<br>açılış: opening<br>acık- : to get hungry (the stomach opens up)<br>açıkça: clearly<br>açıkla-: to explian (making it more open<br>açıklama: explanation<br>açıl-: to open up, to unfold<br>açlık: hunger (stomach is open and empty)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">al- : to buy, to open</div>
+            <div class="flip-card-back">alış: buying, receiving<br>alım: purchase, intake<br>alıcı: receiver</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">an- : to remember, to refer, to mention</div>
+            <div class="flip-card-back">anı: memory<br>anıt: monument</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">ana : mother, main, primary</div>
+            <div class="flip-card-back">anayol: main road<br>anakara: main land<br>anayasa: constitution <br>anasayfa: main page</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">at- : to throw</div>
+            <div class="flip-card-back">atış: throw, shot<br>atık: waste<br>atkı: scarf (you throw it over your shoulder<br>ata-: to appoint (you throw someone to do the job)<br>atardamar: artery</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">bak- : to look</div>
+            <div class="flip-card-back">bakım: care, maintenance<br>bakıcı: caretaker<br>bakış: glance, view, approach</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">baş : head</div>
+            <div class="flip-card-back">başla-: to start<br>başlangıç: beginning<br>başlık: title (header)<br>başkaldırmak: to rebel (you rise your head)<br>başvuru: request, application (you hit your head)<br>başkent</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">bil- : to know</div>
+            <div class="flip-card-back">bildiri: notice, announcement<br>bilge: wise<br>bilgi: information<br>bilmece: riddle</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">çek- : to pull</div>
+            <div class="flip-card-back">çekim: the attractiveness, the filming, the conjugation<br>çekici: attractive, charming, tow truck<br>çekiliş: raffle, draw (you pull the result from a box)<br>çekimser: abstainer, uncommited (you pull yourself away from the topic)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">çiz- : to scratch, to draw</div>
+            <div class="flip-card-back">çizer: illustrator <br>çizgi: line<br>çizik: scratch<br>çizim: drawing</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">dol- : to get filled</div>
+            <div class="flip-card-back">dolu: full<br>dolmuş: collective taksi<br>dolma: dolma (the stuffed food)<br>doldur-: to fill</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">dön- : turn</div>
+            <div class="flip-card-back">dönüş: return, rotation<br>döner: döner (it turns)<br>dönüşüm: transformation<br>dönem: era, period <br>dönemsel: periodical, seasonal<br>döngü: loop<br>dönüm noktası: turning point, milestone<br>dönüştür-: to transform</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">dur- : to stop</div>
+            <div class="flip-card-back">duruş: stand, posture, position (how you stand)<br>durum: situation<br>durak: stop (transportation)<br>durağan: stable, actless<br>durgun: still, calm<br>durdur-: to make it stop<br>duruşma: trail</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">duy- : to hear</div>
+            <div class="flip-card-back">duyu: sense<br>duygu: feeling<br>duyar: sensible<br>duyarlı: sensitive, responsive<br>duygulan-: to get emotional<br>duygusal: emotional<br>duyur-: to announce<br>duyuru: announcement</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">düş- : to fall</div>
+            <div class="flip-card-back">düşüş: the fall<br>düşük: low<br>düşür-: to drop, to make it fall, to reduce, to topple</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">düz- : to arrange, to line up (to make it flat, to make it tidy)</div>
+            <div class="flip-card-back">düz: flat<br>düzen: order<br>düzenli: tidy, regular<br>düzenek: set up, machinery<br>düzenle-: to organize<br>düzey: level, surface<br>düzlük: plain, flatness</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">eğ- : to bend</div>
+            <div class="flip-card-back">eğim: slope, tilt<br>eğik: skewed, leaned<br>eğilim: tendency<br>eğimli: liable, prone to<br>eğitim: education (the school shapes and bends you)<br>eğitici: educational<br>eğitimli: educated<br>eğitimsiz: untrained<br>eğit-: to teach, to tame</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">ele- : to select out</div>
+            <div class="flip-card-back">eleme: elimination by selection<br>elenme: elimination, disqualified<br>elek: sieve, strainer<br>eleştir-: to criticize<br>eleştiri: criticism<br>eleştirmen: critic, reviewer</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">evlen- : to marry</div>
+            <div class="flip-card-back">evli: married<br>evsiz: homeless<br>ev: home<br>evcil: domestic, tamed<br>evcilleştir-: to tame</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">evir- : to circle around, to change</div>
+            <div class="flip-card-back">evren: the universe (it constanly turns)<br>evrensel: universal<br>evrim: evolution<br>çevir-: to turn, to circle around<br>çevre: environment, habitat, network<br>çevreci: environmentalist</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">ez- : to crush, to oppress</div>
+            <div class="flip-card-back">ezik: loser, crushed<br>ezici: overwhelming, crushed, oppressor<br>ezilmek: to get crushed<br>eziyet: torment, pain, torture</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">eski- : to get old</div>
+            <div class="flip-card-back">eski: old<br>eskit-: to make it old<br>eskici: antique shop, junk dealer</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">et- : to do (auxiliary verb)</div>
+            <div class="flip-card-back">etki: impact, influence<br>etkile-: to impress<br>etkili: effective, influential<br>etkileşim: interaction<br>etkin: active, effective<br>etmen: factor, element, component<br>etkinlik: activity</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">fark et- : to notice</div>
+            <div class="flip-card-back">fark: difference<br>farklı: different</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">geç- : to pass</div>
+            <div class="flip-card-back">geç: late<br>gecik-: to be late<br>geçit: pass, gateway<br>geçmiş: past<br>geçerli: valid, operative (it can pass)<br>geçerlilik: validity, relevance<br>geçici: temporal<br>geçim: subsistence, livelihood (how they pass)<br>geçiş: passage, transition</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">gel- : to come</div>
+            <div class="flip-card-back">gelir: income<br>geliş: arrival<br>gelgit: sea tide (it comes and goes)<br>gelenek: tradition (how it came to this day)<br>gelişim: progress, development<br>geleneksel: traditional<br>geliş-: to improve<br>gelişmiş: developt<br>geliştir-: to enhance</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">gerek- : require</div>
+            <div class="flip-card-back">gerek: need, necessity<br>gerekçe: justification, reason<br>gerekli: essential, required<br>gereksiz: unnecessary</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">ger- : to stretch (to pull it back)</div>
+            <div class="flip-card-back">geri: back<br>gergin: strained, nervous, tense<br>gerginlik: tension<br>gerici: reactionary, obscuratist<br>gerilim: tension, thriller, voltage<br>gerilmek: to tense up, to be stressed</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">gez- : to travel, to tour</div>
+            <div class="flip-card-back">gezi: trip<br>gezin-: to walk around, to hover<br>gezgin: traveller<br>gezegen: planet<br>gezinti: ride, tour, stroll</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">git- : to go</div>
+            <div class="flip-card-back">gidiş: going, departure<br>gider: expence (it goes away)<br>gidişat: course of events (how it goes)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">gir- : to enter</div>
+            <div class="flip-card-back">giriş: entrance, introduction<br>girdi: input<br>girişim: initiative, enterprise (the thing that enters to do something)<br>girişimci: entrepreneur (the one who enters to a market)<br>girişken: sociable (the one who enters into lives, possibilities)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">giy- : to wear</div>
+            <div class="flip-card-back">giydir-: to dress<br>giyim: clothing<br>giysi: clothes</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">gizle- : to hide</div>
+            <div class="flip-card-back">gizli: hidden, secret<br>gizem: mystery<br>gizemli: mysterious<br>gizlen-: to hide out<br>gizlice: secretly, by stealth<br>gizlilik: confidentiality, privacy</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">göç- : to migrate</div>
+            <div class="flip-card-back">göçmen: immigrant<br>göçebe: nomad<br>göç: immigration</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">gör- : to see</div>
+            <div class="flip-card-back">görgü: manners (what you saw from your parents)<br>görüntü: display, image<br>görsel: visual<br>görüş: sight, opinion, remark (how you saw it)<br>görünüm: appearance, outlook<br>görgülü: kind, mannerly<br>görgüsüzlük: lack of manners<br>görül-: to be seen (to be perceived or noticed)<br>görünüş: appearance (how something is seen)<br>görüş: opinion/vision (act of seeing or perceiving)<br>görüş-: to meet, to have a conversation (to see each other mutually)<br>gösterge: indicator (thing that shows)<br>gösteri: show/performance (act of showing)<br>gösteriş: ostentation (showiness, act of showing off)<br>göster-: to show (make something seen)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">göz : eye</div>
+            <div class="flip-card-back">gözle-: to observe (to use the eye actively)<br>gözcü: watchman (one who watches)<br>gözlem: observation (the act of watching)<br>gözaltı: custody (under surveillance, observation)<br>gözlemle-: to observe<br>gözetle-:  to observe, to watch carefully (to put an eye on something)<br>gözetmen: watchman  (one who watches over)<br>gözlemci: observer (one who observes)<br>gözlük: glasses (thing related to eyes)<br>gözlükçü: optician (one who sells/makes glasses)<br>gözyaşı: tear (eye water)<br>gözük-: to appear (to be seen)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">gül- : to laugh</div>
+            <div class="flip-card-back">gülüş: laugh, smile (the act or sound of laughing)<br>gülümse-: to smile<br>güldür- : to make someone laugh<br>güle güle: goodbye (said to someone leaving, literally “laughing, laughing”)<br>güldürü : comedy</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">gün : day</div>
+            <div class="flip-card-back">güncel: current, up to date (belonging to the day)<br>güncelle-: to update (act of making something up to date)<br>günlük: daily, diary (thing related to day)<br>güneş: sun (source of daylight)<br>gündelik: daily, everyday (something belonging to the day)<br>gündüz: morning, daytime<br>güney: south (direction of the sun at midday)<br>güneşlen-: to sunbathe (to be in the sun)<br>güneşli: sunny<br>günübirlik: one-day (lasting a single day)</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">hatırla- : to remember (to bring to memory)</div>
+            <div class="flip-card-back">hatıra: souvenir, memory (something remembered)<br>hatırlat-: to remind (to cause to remember)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">hazır : ready, prepare</div>
+            <div class="flip-card-back">hazırla-: to prepare<br>hazırlan-: to get ready <br>hazırlık: preparation<br>hazırlıklı: prepared<br>hazırcevap: quick-witted (ready with an answer)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">hoş : pleasant, nice</div>
+            <div class="flip-card-back">hoşlan-: to like (to feel pleasure from)<br>hoşçakal: goodbye (literally “stay pleasant”)<br>hoşgörü: tolerance (the skill of seeing goodness in others)<br>hoşgörülü: tolerant<br>hoşnut: content, pleased</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">ısı : heat</div>
+            <div class="flip-card-back">ısın-: to warm up<br>ısıtıcı: heater<br>ısıtma: heating</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">içer- : to contain (to hold inside)</div>
+            <div class="flip-card-back">iç: inside<br>içerle-: to resent, get angry (figurative “to hold inside”)<br>içerik: content (that which is inside)<br>içgüdü:  instinct (inner feeling)<br>içsel: internal, inner<br>içten: sincere (from the inside)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">ilet- : to transmit, to deliver</div>
+            <div class="flip-card-back">ileti: input, message (something transmitted)<br>iletişim: communication (the act of transmitting messages)<br>iletken: conductor (that which transmits)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">inan- : to believe</div>
+            <div class="flip-card-back">inanç: belief<br>inançlı: faithful (having belief)<br>inandır-:  to convince (to cause belief)<br>inanılmaz: unbelievable (not able to be believed)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">in- : to descend, go down</div>
+            <div class="flip-card-back">iniş: descent (the act of going down)<br>indirim: discount (a reduction, going down in price)<br>indir-: to lower, to download (to cause to go down)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">işle- : to operate, to process (to do work)</div>
+            <div class="flip-card-back">iş: work<br>işlem: process (an act of working)<br>işlek: busy (frequently worked or used)<br>işçi: worker<br>işlet-: to run/operate (to make function)<br>işgücü: workforce (power of labor)<br>işadamı: businessman<br>işlev: function (role or task in work)<br>işlevsel: functional<br>işsiz: unemployed<br>işyeri: workplace<br>işveren: employer (one who gives work)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">izle- to follow/watch (to track or observe)</div>
+            <div class="flip-card-back">izlenim: impression (what’s observed)<br>izleyici: viewer, follower<br>izlenme: being watched (passive form)</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">kaç- to escape, to flee</div>
+            <div class="flip-card-back">kaçak: fugitive, illegal<br>kaçakçı: smuggler<br>kaçamak: evasive, secretive (sneaky action)<br>kaçık: crazy (figuratively "escaped")<br>kaçın-: to avoid (to escape from)<br>kaçınılmaz: inevitable (not escapable)<br>kaçır-: to kidnap, to miss (to cause escape)<br>kaçış: escape (act of fleeing)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">kal- : to stay, remain</div>
+            <div class="flip-card-back">kalıcı: permanent (able to stay)<br>kalıntı: remains (leftovers)<br>kalış: stay<br>kalıtsal: hereditary (passed on, remaining through generations)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">kalk- : to rise, to get up</div>
+            <div class="flip-card-back">kalkış: departure (act of rising)<br>kalkın-: to develop (to rise in status)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">kapa- : to close</div>
+            <div class="flip-card-back">kapı: door<br>kapak: cover, lid<br>kapanış: closing<br>kapalı: closed<br>kapan: trap (something that closes in)<br>kapsam: scope (what is cover)<br>kapıcı: doorman</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">kar- : to mix</div>
+            <div class="flip-card-back">karışım: mixture<br>karışık: mixed, messy<br>karmaşa: confusion (state of mixing)<br>karmaşık: complicated</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">karşı : opposite, against</div>
+            <div class="flip-card-back">karşı çık-: to oppose<br>karşılama: greeting, welcome (facing someone)<br>karşıla-: to greet<br>karşılaş-: to encounter (to meet face-to-face)<br>karşılık: response, return (opposing part)<br>karşılıklı: mutual<br>karşıt: opposing, opposite</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">kat- : to add, to fold</div>
+            <div class="flip-card-back">katıl-:  to join (to be added)<br>katman: layer (added on top)<br>katkı: contribution (what’s added)<br>katla-: to fold<br>katlan-: to be folded, to endure</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">kaz- : to dig</div>
+            <div class="flip-card-back">kazı: excavation<br>kazma: pickaxe (digging tool)<br>kazıkla-: to swindle (figuratively “to spike”)<br>kazan-: too win, to earn<br>kazanç: gain, profit</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">kes- : to cut</div>
+            <div class="flip-card-back">kesik: cut<br>kesinti: interruption<br>kestirme: shortcut<br>keskin: sharp<br>kesim: cutting, section<br>kesin: definite<br>kesinlikle: definitely<br>kesit: cross-section</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">kır- : to break</div>
+            <div class="flip-card-back">kırık: broken<br>kırıcı: breaking/offensive<br>kırgın: hurt/offended<br>kırılgan: fragile<br>kırıntı: crumb (broken pieces)<br>kırışık: wrinkled</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">kıs- : to shorten/reduce</div>
+            <div class="flip-card-back">kısa: short<br>kısalt-: to shorten<br>kısık: low (dimmed)<br>kısıtla-: to restrict<br>kısıtlı: limited</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">kız- : to get angry, to become red</div>
+            <div class="flip-card-back">kızar-: to blush / to fry (turn red)<br>kızart-: to fry (to make red/hot)<br>kızdır-: to anger (to make someone angry, therefore red) <br>kızgın: angry<br>kızıl</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">kon- : to settle / to land</div>
+            <div class="flip-card-back">konuk: guest (one who settles briefly)<br>konak: mansion, stopover (place to stay)<br>konakla-: to stay<br>konukseverlik: hospitality<br>konum: location, position<br>konut: residence</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">kork- : to fear (to be afraid)</div>
+            <div class="flip-card-back">korku: fear <br>korkak: coward (one who fears easily)<br>korkunç: frightening, terrible <br>korkut-: to scare (to cause fear)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">koş- : to run</div>
+            <div class="flip-card-back">koşu: run, running (the act of running)<br>koşucu: runner<br>koşul: koşul: condition (something that runs as a requirement)<br>koşullan-: koşullan-: to be conditioned (to develop a learned response, figuratively “to be set to run a pattern”)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">kur- : to establish, to found, to install</div>
+            <div class="flip-card-back">kurgu: editing, fiction, setup<br>kurmaca: fiction, plot<br>kurum: institution, establishment<br>kurumsal: institutional, corporate<br>kural: rule, order, code</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">oku- : to read</div>
+            <div class="flip-card-back">okur: reader<br>okunaklı: readable, legible<br>okuryazar: literate</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">ol- : to occur, to happen, to be, to become</div>
+            <div class="flip-card-back">oluş: being, becoming, formation<br>varoluş: existence, being, entity<br>olağan: usual, ordinary<br>olanak: opportunity, possibility, chance<br>olgun: mature, ripe<br>olgunlaş-: to ripen, to mature<br>olağanüstü: extraordinary, splendid<br>olumlu: positive, affirmative<br>olumsuz: negative, adverse<br>oluş-: to comprise of, to consist of<br>oluştur-: to constitute,to form<br>oluşum: formation, creation</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">öde- : to pay, to foot</div>
+            <div class="flip-card-back">ödev: assignment, duty, task<br>ödenek: allowence, subvention<br>ödeme: payment, repayment<br>ödünç: loan, borrowed</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">öğren- : to find out, to learn</div>
+            <div class="flip-card-back">öğrenim: learning, finding out<br>öğrenci: pupil, student, learner<br>öğretmen: teacher, professor, tutor<br>öğretim: teaching, education<br>öğüt: advice, consel<br>öğret-: to teach, to train</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">ölç- : to gauge, to measure</div>
+            <div class="flip-card-back">ölçü: size, measure<br>ölçülü: restrained, measured<br>ölçek: scale<br>ölçüt: yardstick, standard, criterion</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">öl- : to die</div>
+            <div class="flip-card-back">öldür-: to kill, to murder<br>ölü: dead<br>ölüm: death<br>ölümcül: deadly<br>ölümlü: mortal</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">ön : front, preliminary</div>
+            <div class="flip-card-back">önce: previous, ago, before, first<br>öncelik: priority, precedence<br>öncü: pioneer, precursor<br>önder: leader, pratagonist<br>öner-: to propose, to offer, to suggest<br>öneri: proposal, offer, suggestion<br>önem: importance, significance<br>önemse-: to mind, to care about, to attach importance to<br>öngör-: to foresee, to predict<br>öngörü: foresight, anticipation, prediction<br>önle-: to prevent, to avoid, to prohibit<br>önlem: precaution, measure<br>önlük: apron, gown<br>önyargı: bias, prejudice</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">ör- : to knit, to braid</div>
+            <div class="flip-card-back">örgü: knitting, braid<br>örgüt: organisation<br>örümcek: spider</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">öz : essence, core, own</div>
+            <div class="flip-card-back">özdeş: identical<br>özel: particular, special, private<br>özerk: autonomous, sovereign<br>özgür: free, independent<br>özgeçmiş: resume, CV, background<br>özgün: authentic, unique<br>özlem: longing, yearning<br>özet: summary, abstract<br>özellikle: especially, particularly<br>özlü: consice, pithy<br>özgüven: self-confidence, self reliance<br>özne: subject, agent<br>öznel: subjective<br>özveri: devotion, self sacrifice</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">saç- : to scatter</div>
+            <div class="flip-card-back">saçma: ridiculous, nonsensical, absurd<br>saçmala-: to bullshit, to drool<br>saçmalık: bullshit, nonsense<br>saçıl-: to strew, to be sprinkled</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">sağla- : to ensure, to provide</div>
+            <div class="flip-card-back">sağlık: health, wellness<br>sağlam: solid, sturdy<br>sağlamlaş-: to indurate, to consolidate<br>sağ: right, alive<br>sağlamlaştır-: to strengten, to reinforce</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">sal- : to release, to loose</div>
+            <div class="flip-card-back">salık: advice, recommendation<br>salgın: epidemic, outbreak<br>salıncak: swing, hammock<br>sallan-: to swing, to shake</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">sap- : to deviate, to diverge</div>
+            <div class="flip-card-back">sapa: devious, off the road<br>sapık: pervert, pscyho<br>saptır-: to deflect, to distort<br>sapkın: aberrant, deviant</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">sat- : to sell</div>
+            <div class="flip-card-back">satıcı: seller, vendor, dealer<br>satılık: on sale, on the market<br>satın al-: to purchase, to buy<br>satış: sales, sale, selling</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">say- : to regard, to count, to number</div>
+            <div class="flip-card-back">sayaç: conter, meter<br>saygı: esteem, respect<br>saygın: reputable, prestigious<br>sayı: count, number<br>sayıkla-: to be delirious, to wander<br>sayıl-: to be counted<br>sayım: counting, census<br>sayın: honourable, esteemed<br>sayısal: quantitative, numerical<br>sayman: comptroller, bookkeeper</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">seç- : to choose, to elect, to select, to pick</div>
+            <div class="flip-card-back">seçim: election, selection<br>seçkin: distinguished, outstanding<br>seçenek: option, choice, selection<br>seçici: selector, picky, selective<br>seçmen: voter, elector</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">sev- : to love, to like, to care for</div>
+            <div class="flip-card-back">sevgi: love, affection<br>sevgili: darling, beloved (person associated with love)<br>sevecen: affection, endearing (tending to love)<br>sevil-: to be loved, to be liked<br>sevimli: cut, nice, pretty (having lovable qualities)<br>sevindir-: to make happy, to gladden, to rejoice<br>sevin-: to rejoice, to be glad<br>seviş-: to make love, to have sex (reciprocal action of loving)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">sığ- : to fit into, to go into (something)</div>
+            <div class="flip-card-back">sığdır-: to cram in, to squeeze<br>sığınak: sanctuary, shelter, bunker (place of refuge)<br>sığınmacı: refugee, asylum seeker<br>sığın-: to take refugee, to take shelter</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">sık- : to tighten, to bore, to squeeze</div>
+            <div class="flip-card-back">sıkı: tight, firm, strict<br>sıkıcı: boring, dull<br>sıkıl-: to be bored, to feel embrassed<br>sıkıntı: distress, boredom (expressing the state of being squeezed/troubled)<br>sıkışık: congested, tight, jammed<br>sıklık: frequency, incidence<br>sıkıştır-: to jam, to compress<br>sıkıyönetim: state of siege, martial, law (strict rule/governanc)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">sil- : to erase</div>
+            <div class="flip-card-back">silgi: eraser (thing that erases)<br>silik: indistinct, meek (lacking clear presence, as if erased)<br>silecek: wiper (thing that wipes/cleans)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">sor- : to ask, to consult</div>
+            <div class="flip-card-back">soru: question, inquiry<br>sorgu: interrogation, query (formal or intense questioning)<br>sorgula-: to query, to interrogate<br>sorumlu: liable, responsible, in charge (one who is held to account)<br>sorumluluk: liability, responsability<br>sorun: troble, problem<br>sorunlu: problematical, troubled<br>soruştur-: to investigate, to enquire<br>soruştuma: investigation, probe</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">söyle- : to tell, to say, to sing</div>
+            <div class="flip-card-back">söylen-: to grumble, to grouch<br>söylenti: rumor<br>söyleşi: conversation<br>söylem: discourse, rhetoric</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">söz : word, promise, statement</div>
+            <div class="flip-card-back">sözcü: spokesman, rapporteur<br>sözcük: word, vocabulary<br>sözlük: dictionary, lexicon<br>sözde: so-called, supposed<br>sözel: verbal, linguistic<br>sözleşme: engagement, contract, agreement<br>sözlü: oral, verbal, verbatim</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">su : water</div>
+            <div class="flip-card-back">sula-: to water, to irrigate<br>sulu: juicy, aqueous<br>suluboya: watercolor<br>sulandır-: to water, to dilute</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">sür- : to lead, to continue, to drive, to exile</div>
+            <div class="flip-card-back">sürü: herd (the bunch of animals you have to lead), drove<br>sürücü: driver<br>süre: duration, period, time<br>süreç: process, period, course<br>sürekli: perpetual, continuous<br>sürgün: exile, exiling<br>sürükleyici: riveting, gripping, immersive</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">şaş- : be baffled, be amazed</div>
+            <div class="flip-card-back">şaşı: squint, cross-eyed<br>şaşır-: be surprised, be baffled<br>şaşkın: confused, puzzled<br>şaşkınlık: confusion, surprise</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">şiş- : to swell, to balloon</div>
+            <div class="flip-card-back">şişik: balloon, blubber<br>şişkin: puffy, bulging<br>şişman: fatter, stout</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">tak- : to fix, to affix</div>
+            <div class="flip-card-back">takı: jewelry (valuable things that you fix)<br>takım: squad, team, set<br>takın-: to wear, to assume<br>takıntı: obsession, hang-up<br>takıntılı: obsessed, haunted<br>takılı: atttached, mounted</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">tanı- : to identify, to recognize</div>
+            <div class="flip-card-back">tanıdık: familiar (someone/something identified)<br>tanık: witness (one who recognizes)<br>tanıklık: testimony (the state of being a witness)<br>tanım: definition (the act or result of identifing )<br>tanımla-: to define<br>tanın-: to be recognized (to be known by others)<br>tanışık: acquainted (someone known to you)<br>tanış-:  to meet, to get acquainted (to mutually recognize each other)<br>tanıştır-: to introduce (to cause two people to meet)<br>tanıtım: presentation (the act of making known)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">tart- : to weigh</div>
+            <div class="flip-card-back">tartı: scale (thing that weighs)<br>tartıl-: to be weighed (to have oneself weighed)<br>tartış-: to argue (to weigh ideas against each other)<br>tartış- to argue (to weigh ideas against each other)<br>tartışmalı: controversial (open to being argued about)<br>tartışmasız:  indisputable (without argument)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">taşı- : to carry</div>
+            <div class="flip-card-back">taşın-: to move out from a place (to to carry one's belongings or self)<br>taşıt: vehicle (thing that carries)<br>taşıyıcı: carrier (one who carries)</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">tut- : to hold, to keep</div>
+            <div class="flip-card-back">tutuk: hesitant, timid<br>tutucu: conservative, retainer, holder<br>tutum: attitude, manner<br>tutar: sum, ammount<br>tutarlı: consistent, coherent<br>tutarsız: inconsistent, incoherent<br>tutku: passion<br>tutkulu: passionate, ambitious<br>tutul-: catch on, stiffen, smite<br>tutun-: hold on to, cling<br>tutuklu: prisoner, inmate, detainee<br>tutuklan-: arrest for, get arrested, be busted<br>tutumlu: sparing, thrifty</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">uç- : to fly</div>
+            <div class="flip-card-back">uçuş: flight, flying<br>uçak: airplane<br>uçucu: volatile<br>uçurtma: kite (the thing that made to fly)</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">ver- : to give</div>
+            <div class="flip-card-back">veriş: delivery<br>verim: yield, efficiency (what is given out or produced)<br>veri: data (a given thing)<br>vergi: tax, duty (the thing you give away)</div>
+          </div>
+        </div>
+        </div>
+<div class="row">
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">yap- : to do, to make</div>
+            <div class="flip-card-back">yapı: construction, structure<br>yapay: artificial (human made)<br>yapıt: work, composition<br>yapım: production, construction</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">yaz- : to write</div>
+            <div class="flip-card-back">yazar: writer, author<br>yazı: writing, article, tax (a written thing)<br>yazıcı: printer<br>yazıt: inscription, tablet</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">ye- : to eat</div>
+            <div class="flip-card-back">yemek: food<br>yem: forage, bait<br>yemiş: fruit, dessert</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">yürü- : to walk</div>
+            <div class="flip-card-back">yürüyüş: walking<br>yürüyen: walker</div>
+          </div>
+        </div>
+        
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">yüz : face</div>
+            <div class="flip-card-back">yüz-: to skin (taking the surface off)<br>yüzsüz: shameless (the one who does not any face or character)<br>yüzeysel: surface, superficial<br>yüzleş-: to confront (to come face to face)<br>yüzleşme: confrontation<br>yüzey</div>
+          </div>
+        </div>
+        </div>
+
+</body>
+</html>

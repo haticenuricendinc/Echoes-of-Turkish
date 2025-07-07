@@ -1,0 +1,153 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  margin: 0;
+  background-color: #e6f0ff;
+  color: #0d1a26;
+  line-height: 1.5;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+#searchBar, #toggleDark {
+  display: block;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+}
+
+#searchBar {
+  width: 240px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#alphabetFilter {
+  text-align: center;
+  margin: 1rem auto;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+#alphabetFilter button {
+  margin: 0.25rem;
+  padding: 0.45rem 0.75rem;
+  border: none;
+  background-color: #d0e5ff;
+  color: #0d1a26;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#alphabetFilter button.active {
+  background-color: #0d1a26;
+  color: white;
+}
+
+#toggleDark {
+  background-color: #0d1a26;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+.word-box {
+  background-color: white;
+  border: 1px solid #b3d1ff;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 260px;
+  min-height: 100px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  transition: transform 0.2s;
+  line-height: 1.6;
+}
+
+.word-box:hover {
+  transform: scale(1.02);
+}
+
+.main-word {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sub-word {
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  padding-top: 0.25rem;
+}
+
+.details {
+  margin-top: 0.5rem;
+}
+
+.arrow {
+  float: right;
+}
+
+footer.site-footer {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
+}
+
+.page {
+  font-family: 'Libre Baskerville', serif;
+  padding: 2rem;
+  background-color: #f9fcff;
+}
+
+.page-content {
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Dark mode */
+body.dark {
+  background-color: #0d1a26;
+  color: #e6f0ff;
+}
+
+body.dark .word-box {
+  background-color: #1c2d44;
+  border-color: #3d5a80;
+}
+
+body.dark .sub-word {
+  color: #cce6ff;
+}
+
+body.dark .main-word {
+  color: #ffffff;
+}
+
+body.dark #alphabetFilter button.active {
+  background-color: #e6f0ff;
+  color: #0d1a26;
+}
