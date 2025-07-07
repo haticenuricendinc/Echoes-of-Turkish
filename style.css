@@ -16,13 +16,13 @@ header {
   font-size: 2.2rem;
   font-weight: bold;
   text-transform: lowercase;
-  padding-bottom: 0; /* Arama çubuğu ile üst kısım arasındaki boşluğu ayarlayın */
+  padding-bottom: 3px; /* Arama çubuğu ile üst kısım arasındaki boşluğu ayarlayın */
 }
 
 #searchBar, #toggleDark {
   display: block;
-  margin: 0.5rem auto;
-  padding: 0.5rem;
+  margin: 10px auto;
+  padding: 8px;
 }
 
 #searchBar {
@@ -89,7 +89,7 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Kartları yatayda ortala */
-  gap: 1.5rem; /* Mevcut boşluk */
+  gap: 30px; /* Mevcut boşluk */
   padding: 1rem 2rem;
   gap: 30px; /* Kartlar arasındaki boşluğu artırın */
   max-width: 1200px; /* Maksimum genişlik belirleyerek içeriğin çok yayılmasını engelleyin */
