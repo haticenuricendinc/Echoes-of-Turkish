@@ -72,6 +72,7 @@
 <body>
   <header>Echoes of Turkish</header>
   <input type="text" id="searchBar" placeholder="Search for words...">
+
 <div class="container">
 <div class="row">
 
@@ -844,5 +845,27 @@
           <a href="contact.html">Contact</a>
         </nav>
       </footer>
-</body>
-</html>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBar = document.getElementById('searchBar');
+            const flipCards = document.querySelectorAll('.flip-card');
+    
+            searchBar.addEventListener('input', function() {
+                const searchTerm = searchBar.value.toLowerCase();
+    
+                flipCards.forEach(card => {
+                    const frontContent = card.querySelector('.flip-card-front').textContent.toLowerCase();
+                    const backContent = card.querySelector('.flip-card-back').textContent.toLowerCase();
+    
+                    if (frontContent.includes(searchTerm) || backContent.includes(searchTerm)) {
+                        card.style.display = 'block'; // Kartı görünür yap
+                    } else {
+                        card.style.display = 'none'; // Kartı gizle
+                    }
+                });
+            });
+        });
+    </script>
+    </body>
+    </html>
